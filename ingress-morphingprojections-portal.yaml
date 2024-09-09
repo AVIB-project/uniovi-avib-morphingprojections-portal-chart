@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+  name: ingress-morphingprojections-portal
+  namespace: default
+spec:
+  rules:
+  - host: minikube.io
+    http:
+      paths:
+      - path: /morphingprojections-portal(/|$)(.*)
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: uniovi-avib-morphingprojections-portal
+            port:
+              number: 80
