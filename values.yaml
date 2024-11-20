@@ -5,14 +5,15 @@
 replicaCount: 1
 
 image:
-  repository: avibdocker.azurecr.io/uniovi-avib-morphingprojections-portal
+  #repository: avibdocker.azurecr.io/uniovi-avib-morphingprojections-portal
+  repository: gsdpi/morphingprojections-portal
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "1.8.0"
+  tag: "1.9.0"
 
 # get Private Container Registry credentials to have access previous pull any container image
-imagePullSecrets:
-  - name: acr-avib-secret
+#imagePullSecrets:
+#  - name: acr-avib-secret
 
 nameOverride: ""
 fullnameOverride: ""
